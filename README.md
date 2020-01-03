@@ -19,12 +19,12 @@ iocage fetch -P node-red -g https://github.com/tprelog/freenas-plugin-index.git
 
 **Mosquitto (MQTT Broker)**
 ```bash
-iocage fetch -P node-red -g https://github.com/tprelog/freenas-plugin-index.git
+iocage fetch -P mosquitto -g https://github.com/tprelog/freenas-plugin-index.git
 ```
 
 **TasmoAdmin**
 ```bash
-iocage fetch -P node-red -g https://github.com/tprelog/freenas-plugin-index.git
+iocage fetch -P tasmoadmin -g https://github.com/tprelog/freenas-plugin-index.git
 ```
 
 ---
