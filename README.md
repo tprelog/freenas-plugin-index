@@ -1,38 +1,28 @@
 ### freenas-plugin-index
 
-- This branch is for FreeNAS 11.3
+#### This branch is for FreeNAS 11.3
+- Check the Community Plugin page on your FreeNAS first
+- Most of these can be installed without using the command line
 
-**Gogs**
+#### Installing from the command line
+
+### New plugins not available in the FreeNAS webui
+
+**ESPHome**
 ```bash
-iocage fetch -P gogs -g https://github.com/tprelog/freenas-plugin-index.git
+iocage fetch -P esphome -g https://github.com/tprelog/freenas-plugin-index.git
 ```
 
-**Home Assistant**
-```bash
-iocage fetch -P homeassistant -g https://github.com/tprelog/freenas-plugin-index.git
-```
-
+### Available FreeNAS Community Plugins
+**Gogs**:
+**Home Assistant Core**
 **Node-RED**
-```bash
-iocage fetch -P node-red -g https://github.com/tprelog/freenas-plugin-index.git
-```
-
 **Mosquitto (MQTT Broker)**
-```bash
-iocage fetch -P mosquitto -g https://github.com/tprelog/freenas-plugin-index.git
-```
-
 **TasmoAdmin**
-```bash
-iocage fetch -P tasmoadmin -g https://github.com/tprelog/freenas-plugin-index.git
-```
 
 ---
 
-#### Extended Options
-
-- For use and other options check the iocage docs
-
+- Installing from a different branch (For other options check the iocage docs)
 ```
-iocage fetch -P PLUGIN_NAME -g REPOSITORY --branch 11.3-RELEASE --name NAME
+iocage fetch -P PLUGIN_NAME -g https://github.com/tprelog/freenas-plugin-index.git --branch BRANCH --name NAME
 ```
