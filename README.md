@@ -14,11 +14,11 @@ iocage fetch -P esphome -g https://github.com/tprelog/freenas-plugin-index.git
 ```
 
 ### Available FreeNAS Community Plugins
-**Gogs**:
-**Home Assistant Core**
-**Node-RED**
-**Mosquitto (MQTT Broker)**
-**TasmoAdmin**
+- **Gogs**
+- **Home Assistant Core**
+- **Node-RED**
+- **Mosquitto (MQTT Broker)**
+- **TasmoAdmin**
 
 ---
 
