@@ -2,22 +2,29 @@
   "gogs": {
     "MANIFEST": "gogs.json",
     "name": "Gogs",
-    "icon": "https://raw.githubusercontent.com/tprelog/iocage-gogs/master/icon.png",
+    "icon": "https://raw.githubusercontent.com/tprelog/freenas-plugin-index/11.3-RELEASE/icons/gogs.png",
     "description": "A painless self-hosted Git service.",
     "official": false,
     "primary_pkg": "gogs"
+  },
+  "esphome": {
+        "MANIFEST": "esphome.json",
+        "name": "ESPHome",
+        "icon": "https://raw.githubusercontent.com/tprelog/freenas-plugin-index/11.3-RELEASE/icons/esphome.png",
+        "description": "ESPHome is a system to control your ESP8266/ESP32 by simple yet powerful configuration files and control them remotely through Home Automation systems.",
+        "official": false
   },
   "homeassistant": {
     "MANIFEST": "homeassistant.json",
     "name": "Home Assistant",
     "description": "Open source home automation that puts local control and privacy first.",
-    "icon": "https://raw.githubusercontent.com/tprelog/iocage-homeassistant/master/icon.png",
+    "icon": "https://raw.githubusercontent.com/tprelog/freenas-plugin-index/11.3-RELEASE/icons/homeassistant.png",
     "official": false
   },
   "mosquitto": {
     "MANIFEST": "mosquitto.json",
     "name": "Mosquitto MQTT",
-    "icon": "https://mosquitto.org/stickers/mosquitto-colour.png",
+    "icon": "https://raw.githubusercontent.com/tprelog/freenas-plugin-index/11.3-RELEASE/icons/mosquitto.png",
     "description": "An open source MQTT broker.",
     "official": false,
     "primary_pkg": "mosquitto"
@@ -25,7 +32,7 @@
   "node-red": {
     "MANIFEST": "node-red.json",
     "name": "Node-RED",
-    "icon": "https://nodered.org/about/resources/media/node-red-icon.png",
+    "icon": "https://raw.githubusercontent.com/tprelog/freenas-plugin-index/11.3-RELEASE/icons/node-red.png",
     "description": "Low-code programming for event-driven applications.",
     "official": false
   },
@@ -33,7 +40,7 @@
     "MANIFEST": "tasmoadmin.json",
     "name": "TasmoAdmin",
     "description": "Website to manage Sonoff Devices flashed with Tasmota.",
-    "icon": "https://raw.githubusercontent.com/reloxx13/TasmoAdmin/master/tasmoadmin/resources/img/logo_small.PNG",
+    "icon": "https://raw.githubusercontent.com/tprelog/freenas-plugin-index/11.3-RELEASE/icons/tasmoadmin.png",
     "official": false 
   }
 }
