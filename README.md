@@ -4,6 +4,13 @@
 - Check the Community Plugin page on your FreeNAS first
 - Most of these can be installed without using the command line
 
+### Available FreeNAS Community Plugins
+- **Gogs**
+- **Home Assistant Core**
+- **Node-RED**
+- **Mosquitto (MQTT Broker)**
+- **TasmoAdmin**
+
 #### Installing from the command line
 
 ### New plugins not available in the FreeNAS webui
@@ -12,13 +19,6 @@
 ```bash
 iocage fetch -P esphome -g https://github.com/tprelog/freenas-plugin-index.git
 ```
-
-### Available FreeNAS Community Plugins
-- **Gogs**
-- **Home Assistant Core**
-- **Node-RED**
-- **Mosquitto (MQTT Broker)**
-- **TasmoAdmin**
 
 ---
 
