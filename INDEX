@@ -8,17 +8,19 @@
     "primary_pkg": "gogs"
   },
   "esphome": {
-        "MANIFEST": "esphome.json",
-        "name": "ESPHome",
-        "icon": "https://raw.githubusercontent.com/tprelog/freenas-plugin-index/11.3-RELEASE/icons/esphome.png",
-        "description": "ESPHome is a system to control your ESP8266/ESP32 by simple yet powerful configuration files and control them remotely through Home Automation systems.",
-        "official": false
+    "MANIFEST": "esphome.json",
+    "name": "ESPHome",
+    "icon": "https://raw.githubusercontent.com/tprelog/freenas-plugin-index/11.3-RELEASE/icons/esphome.png",
+    "description": "ESPHome is a system to control your ESP8266/ESP32 by simple yet powerful configuration files and control them remotely through Home Automation systems.",
+    "primary_pkg": null,
+    "official": false
   },
   "homeassistant": {
     "MANIFEST": "homeassistant.json",
-    "name": "Home Assistant",
+    "name": "Home Assistant Core",
     "description": "Open source home automation that puts local control and privacy first.",
     "icon": "https://raw.githubusercontent.com/tprelog/freenas-plugin-index/11.3-RELEASE/icons/homeassistant.png",
+    "primary_pkg": null,
     "official": false
   },
   "mosquitto": {
@@ -33,14 +35,16 @@
     "MANIFEST": "node-red.json",
     "name": "Node-RED",
     "icon": "https://raw.githubusercontent.com/tprelog/freenas-plugin-index/11.3-RELEASE/icons/node-red.png",
-    "description": "Low-code programming for event-driven applications.",
+    "description": "Node-RED is a programming tool for wiring together hardware devices, APIs and online services in new and interesting ways.",
+    "primary_pkg": null,
     "official": false
   },
   "tasmoadmin": {
     "MANIFEST": "tasmoadmin.json",
     "name": "TasmoAdmin",
-    "description": "Website to manage Sonoff Devices flashed with Tasmota.",
+    "description": "Website to manage devices flashed with Tasmota.",
     "icon": "https://raw.githubusercontent.com/tprelog/freenas-plugin-index/11.3-RELEASE/icons/tasmoadmin.png",
+    "primary_pkg": null,
     "official": false 
   }
 }
