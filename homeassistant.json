@@ -16,10 +16,11 @@
     "gmake",
     "libxml2",
     "libxslt",
+    "openssl"
     "pkgconf",
-    "python38",
-    "py38-av",
-    "py38-sqlite3",
+    "python37",
+    "py37-av",
+    "py37-sqlite3",
     "sudo",
     "wget",
     "zip"
