@@ -2,7 +2,7 @@
   "gogs": {
     "MANIFEST": "gogs.json",
     "name": "Gogs",
-    "icon": "https://raw.githubusercontent.com/tprelog/freenas-plugin-index/11.3-RELEASE/icons/gogs.png",
+    "icon": "https://raw.githubusercontent.com/tprelog/freenas-plugin-index/12.1-RELEASE/icons/gogs.png",
     "description": "A painless self-hosted Git service.",
     "official": false,
     "primary_pkg": "gogs"
@@ -10,7 +10,7 @@
   "esphome": {
     "MANIFEST": "esphome.json",
     "name": "ESPHome",
-    "icon": "https://raw.githubusercontent.com/tprelog/freenas-plugin-index/11.3-RELEASE/icons/esphome.png",
+    "icon": "https://raw.githubusercontent.com/tprelog/freenas-plugin-index/12.1-RELEASE/icons/esphome.png",
     "description": "ESPHome is a system to control your ESP8266/ESP32 by simple yet powerful configuration files and control them remotely through Home Automation systems.",
     "primary_pkg": null,
     "official": false
@@ -19,14 +19,14 @@
     "MANIFEST": "homeassistant.json",
     "name": "Home Assistant Core",
     "description": "Open source home automation that puts local control and privacy first.",
-    "icon": "https://raw.githubusercontent.com/tprelog/freenas-plugin-index/11.3-RELEASE/icons/homeassistant.png",
+    "icon": "https://raw.githubusercontent.com/tprelog/freenas-plugin-index/12.1-RELEASE/icons/homeassistant.png",
     "primary_pkg": null,
     "official": false
   },
   "mosquitto": {
     "MANIFEST": "mosquitto.json",
     "name": "Mosquitto MQTT",
-    "icon": "https://raw.githubusercontent.com/tprelog/freenas-plugin-index/11.3-RELEASE/icons/mosquitto.png",
+    "icon": "https://raw.githubusercontent.com/tprelog/freenas-plugin-index/12.1-RELEASE/icons/mosquitto.png",
     "description": "An open source MQTT broker.",
     "official": false,
     "primary_pkg": "mosquitto"
@@ -34,7 +34,7 @@
   "node-red": {
     "MANIFEST": "node-red.json",
     "name": "Node-RED",
-    "icon": "https://raw.githubusercontent.com/tprelog/freenas-plugin-index/11.3-RELEASE/icons/node-red.png",
+    "icon": "https://raw.githubusercontent.com/tprelog/freenas-plugin-index/12.1-RELEASE/icons/node-red.png",
     "description": "Node-RED is a programming tool for wiring together hardware devices, APIs and online services in new and interesting ways.",
     "primary_pkg": null,
     "official": false
@@ -43,7 +43,7 @@
     "MANIFEST": "tasmoadmin.json",
     "name": "TasmoAdmin",
     "description": "Website to manage devices flashed with Tasmota.",
-    "icon": "https://raw.githubusercontent.com/tprelog/freenas-plugin-index/11.3-RELEASE/icons/tasmoadmin.png",
+    "icon": "https://raw.githubusercontent.com/tprelog/freenas-plugin-index/12.1-RELEASE/icons/tasmoadmin.png",
     "primary_pkg": null,
     "official": false 
   }

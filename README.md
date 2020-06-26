@@ -1,6 +1,6 @@
 ### freenas-plugin-index
 
-#### This branch is for FreeNAS 11.3
+#### This branch is for TrueNAS Core 12
 - Check the Community Plugin page on your FreeNAS first
 - Most of these can be installed without using the command line
 

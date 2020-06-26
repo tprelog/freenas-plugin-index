@@ -1,6 +1,6 @@
 {
   "name": "homeassistant",
-  "release": "11.3-RELEASE",
+  "release": "12.1-RELEASE",
   "artifact": "https://github.com/tprelog/iocage-homeassistant.git",
   "official": "false",
   "properties": {
@@ -17,10 +17,9 @@
     "gmake",
     "libxml2",
     "libxslt",
-    "openssl",
     "pkgconf",
-    "python37",
-    "py37-sqlite3",
+    "python38",
+    "py38-sqlite3",
     "sudo",
     "wget",
     "zip"
