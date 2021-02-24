@@ -1,0 +1,155 @@
+freebsd_instance:
+  cpu: 4
+  memory: "4"
+
+#trigger_type: manual
+only_if: $CIRRUS_BRANCH == '12.2-RELEASE' || $CIRRUS_TAG == '' || $CIRRUS_PR != ''
+
+install_template: &INSTALL_PLUGIN
+  requirements_script: pkg install -y jq
+  install_script: |
+    release=$(jq -r '.release' $PLUGIN_FILE)
+    name=$(jq '.name' $PLUGIN_FILE)
+    packagesite=$(jq '.packagesite' $PLUGIN_FILE)
+    fingerprints=$(jq -r '.fingerprints | keys[]' $PLUGIN_FILE)
+    plugin_repo=$(jq -r '.artifact' $PLUGIN_FILE)
+    pkgs=$(jq -r '.pkgs | join(" ")' $PLUGIN_FILE)
+
+    pkg_dir=/usr/local/test
+    repos_dir="${pkg_dir}/repos"
+    fingerprints_dir="${pkg_dir}/fingerprints"
+
+    echo "Creating main repos dir: ${repos_dir}"
+    mkdir -p $repos_dir
+    export REPOS_DIR=$repos_dir
+
+    pkg_conf_path="${repos_dir}/test.conf"
+    echo "iocage-plugins: {" > $pkg_conf_path
+    echo "url: $packagesite," >> $pkg_conf_path
+    echo "signature_type: \"fingerprints\"," >> $pkg_conf_path
+    echo "fingerprints \"${fingerprints_dir}\"," >> $pkg_conf_path
+    echo "enabled: true" >> $pkg_conf_path
+    echo } >> $pkg_conf_path
+    echo "Created test pkg config file:"
+    cat $pkg_conf_path
+
+    trusted_fingerprints="$fingerprints_dir/trusted"
+    mkdir -p "${trusted_fingerprints}"
+
+    for repo_name in $fingerprints
+    do
+      repo_fingerprints=$(jq -rc '."fingerprints"."'${repo_name}'"[]' $PLUGIN_FILE)
+
+      repo_count=1
+      echo $repo_fingerprints | while IFS='' read f
+      do
+        echo "Creating fingerprint file for repo:"
+        echo $f
+
+        function=$(echo $f | jq -r '.function')
+        fingerprint=$(echo $f | jq -r '.fingerprint')
+        file_path=${trusted_fingerprints}/${repo_name}_${repo_count}
+
+        echo "Creating new fingerprint file: ${file_path}"
+
+        echo "function: $function" > ${file_path}
+        echo "fingerprint: $fingerprint" >> ${file_path}
+
+        repo_count=$(expr $repo_count + 1)
+      done
+    done
+
+    if [ "$(which git)" = "" ]; then
+      pkg install -y git-lite || pkg install -y git
+    fi
+
+    release_branch="$(freebsd-version | cut -d '-' -f1)-RELEASE"
+    git clone -b ${release_branch} ${plugin_repo} ./plugin || git clone -b master ${plugin_repo} ./plugin
+
+    # Cleanup before plugin pkg installation
+    if ! echo ${pkgs} | grep -q "git" ; then
+      pkg remove -y git-lite git jq
+      pkg autoremove -y
+    fi
+
+    echo "Test install plugin pkgs for plugin: $name"
+    echo "Installing $name pkgs: $pkgs"
+    pkg install -y $pkgs
+
+    if [ -d "./plugin/overlay" ]; then
+      echo "Found overlay folder"
+      cp -r ./plugin/overlay/ /
+    fi
+
+    ./plugin/post_install.sh
+
+    if [ -f ./plugin/pre_update.sh ]; then
+      ./plugin/pre_update.sh
+    fi
+
+    if [ -f ./plugin/post_update.sh ]; then
+      ./plugin/post_update.sh
+    fi
+
+# -- ESPHOME ----------------------------
+esphome-12-2_task:
+  <<: *INSTALL_PLUGIN
+  matrix:
+    - freebsd_instance:
+        image_family: freebsd-12-2
+  env:
+    PLUGIN_FILE: "esphome.json"
+
+# -- GOGS -------------------------------
+gogs-12-2_task:
+  <<: *INSTALL_PLUGIN
+  matrix:
+    - freebsd_instance:
+        image_family: freebsd-12-2
+  env:
+    PLUGIN_FILE: "gogs.json"
+  
+# -- HOME ASSISTANT CORE ----------------
+homeassistant-12-2_task:
+  <<: *INSTALL_PLUGIN
+  matrix:
+    - freebsd_instance:
+        image_family: freebsd-12-2
+  env:
+    PLUGIN_FILE: "homeassistant.json"
+
+# -- MOSQUITTO --------------------------
+mosquitto-12-2_task:
+  <<: *INSTALL_PLUGIN
+  matrix:
+    - freebsd_instance:
+        image_family: freebsd-12-2
+  env:
+    PLUGIN_FILE: "mosquitto.json"
+
+# -- NODE-RED ---------------------------
+node-red-12-2_task:
+  <<: *INSTALL_PLUGIN
+  matrix:
+    - freebsd_instance:
+        image_family: freebsd-12-2
+  env:
+    PLUGIN_FILE: "node-red.json"
+
+# -- TASMOADMIN -------------------------
+tasmoadmin-12-2_task:
+  <<: *INSTALL_PLUGIN
+  matrix:
+    - freebsd_instance:
+        image_family: freebsd-12-2
+  env:
+    PLUGIN_FILE: "tasmoadmin.json"
+
+# -- Z-WAVE JS TO MQTT ------------------
+zwavejs2mqtt-12-2_task:
+  <<: *INSTALL_PLUGIN
+  matrix:
+    - freebsd_instance:
+        image_family: freebsd-12-2
+  env:
+    PLUGIN_FILE: "zwavejs2mqtt.json"
