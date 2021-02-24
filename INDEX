@@ -1,0 +1,58 @@
+{
+    "esphome": {
+        "MANIFEST": "esphome.json",
+        "name": "ESPHome",
+        "icon": "https://icons.freenas.org/community-icons/esphome.png",
+        "description": "ESPHome is a system to control your ESP8266/ESP32 by simple yet powerful configuration files and control them remotely through Home Automation systems.",
+        "primary_pkg": null,
+        "official": false
+    },
+    "gogs": {
+        "MANIFEST": "gogs.json",
+        "name": "Gogs",
+        "icon": "https://icons.freenas.org/community-icons/gogs.png",
+        "description": "A painless self-hosted Git service.",
+        "primary_pkg": "gogs",
+        "official": false
+    },
+    "homeassistant": {
+        "MANIFEST": "homeassistant.json",
+        "name": "Home Assistant Core",
+        "icon": "https://icons.freenas.org/community-icons/homeassistant.png",
+        "description": "Open source home automation that puts local control and privacy first.",
+        "primary_pkg": null,
+        "official": false
+    },
+    "mosquitto": {
+        "MANIFEST": "mosquitto.json",
+        "name": "Mosquitto MQTT",
+        "icon": "https://icons.freenas.org/community-icons/mosquitto.png",
+        "description": "An open source MQTT broker.",
+        "primary_pkg": "mosquitto",
+        "official": false
+    },
+    "node-red": {
+        "MANIFEST": "node-red.json",
+        "name": "Node-RED",
+        "icon": "https://icons.freenas.org/community-icons/node-red.png",
+        "description": "Node-RED is a programming tool for wiring together hardware devices, APIs and online services in new and interesting ways.",
+        "primary_pkg": null,
+        "official": false
+    },
+    "tasmoadmin": {
+        "MANIFEST": "tasmoadmin.json",
+        "name": "TasmoAdmin",
+        "icon": "https://icons.freenas.org/community-icons/tasmoadmin.png",
+        "description": "Website to manage devices flashed with Tasmota.",
+        "primary_pkg": null,
+        "official": false
+    },
+    "zwavejs2mqtt": {
+        "MANIFEST": "zwavejs2mqtt.json",
+        "icon": "https://icons.freenas.org/community-icons/zwavejs2mqtt.png",
+        "name": "Z-Wave JS to MQTT",
+        "description": "Fully configurable Zwave to MQTT gateway and Control Panel using NodeJS and Vue. This also includes the Z-Wave JS Server!",
+        "primary_pkg": null,
+        "official": false
+    }
+}
