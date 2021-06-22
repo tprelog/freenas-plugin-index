@@ -11,7 +11,7 @@ install_template: &INSTALL_PLUGIN
   install_script: .cirrus/install_script.sh
 
 
-esphome_task:
+esphome-12-2_task:
   <<: *INSTALL_PLUGIN
   only_if: "changesInclude('esphome.json', '.cirrus/install_script.sh')"
   matrix:
@@ -20,7 +20,7 @@ esphome_task:
   env:
     PLUGIN_FILE: "esphome.json"
 
-gogs_task:
+gogs-12-2_task:
   <<: *INSTALL_PLUGIN
   only_if: "changesInclude('gogs.json', '.cirrus/install_script.sh')"
   matrix:
@@ -29,7 +29,7 @@ gogs_task:
   env:
     PLUGIN_FILE: "gogs.json"
 
-homeassistant_task:
+homeassistant-12-2_task:
   <<: *INSTALL_PLUGIN
   only_if: "changesInclude('homeassistant.json', '.cirrus/install_script.sh')"
   matrix:
@@ -38,7 +38,7 @@ homeassistant_task:
   env:
     PLUGIN_FILE: "homeassistant.json"
 
-mosquitto_task:
+mosquitto-12-2_task:
   <<: *INSTALL_PLUGIN
   only_if: "changesInclude('mosquitto.json', '.cirrus/install_script.sh')"
   matrix:
@@ -47,7 +47,7 @@ mosquitto_task:
   env:
     PLUGIN_FILE: "mosquitto.json"
 
-node-red_task:
+node-red-12-2_task:
   <<: *INSTALL_PLUGIN
   only_if: "changesInclude('node-red.json', '.cirrus/install_script.sh')"
   matrix:
@@ -56,7 +56,7 @@ node-red_task:
   env:
     PLUGIN_FILE: "node-red.json"
 
-tasmoadmin_task:
+tasmoadmin-12-2_task:
   <<: *INSTALL_PLUGIN
   only_if: "changesInclude('tasmoadmin.json', '.cirrus/install_script.sh')"
   matrix:
@@ -65,7 +65,7 @@ tasmoadmin_task:
   env:
     PLUGIN_FILE: "tasmoadmin.json"
 
-zwavejs2mqtt_task:
+zwavejs2mqtt-12-2_task:
   <<: *INSTALL_PLUGIN
   only_if: "changesInclude('zwavejs2mqtt.json', '.cirrus/install_script.sh')"
   matrix:
