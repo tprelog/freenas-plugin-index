@@ -10,10 +10,11 @@ env:
 install_template: &INSTALL_PLUGIN
   install_script: .cirrus/install_script.sh
 
+only_if: $CIRRUS_BRANCH == '12.2-RELEASE'
 
 esphome-12-2_task:
   <<: *INSTALL_PLUGIN
-  only_if: "changesInclude('esphome.json', '.cirrus/install_script.sh')"
+  #only_if: "changesInclude('esphome.json', '.cirrus/install_script.sh')"
   matrix:
     - freebsd_instance:
         image_family: freebsd-12-2
@@ -22,7 +23,7 @@ esphome-12-2_task:
 
 gogs-12-2_task:
   <<: *INSTALL_PLUGIN
-  only_if: "changesInclude('gogs.json', '.cirrus/install_script.sh')"
+  #only_if: "changesInclude('gogs.json', '.cirrus/install_script.sh')"
   matrix:
     - freebsd_instance:
         image_family: freebsd-12-2
@@ -31,7 +32,7 @@ gogs-12-2_task:
 
 homeassistant-12-2_task:
   <<: *INSTALL_PLUGIN
-  only_if: "changesInclude('homeassistant.json', '.cirrus/install_script.sh')"
+  #only_if: "changesInclude('homeassistant.json', '.cirrus/install_script.sh')"
   matrix:
     - freebsd_instance:
         image_family: freebsd-12-2
@@ -40,7 +41,7 @@ homeassistant-12-2_task:
 
 mosquitto-12-2_task:
   <<: *INSTALL_PLUGIN
-  only_if: "changesInclude('mosquitto.json', '.cirrus/install_script.sh')"
+  #only_if: "changesInclude('mosquitto.json', '.cirrus/install_script.sh')"
   matrix:
     - freebsd_instance:
         image_family: freebsd-12-2
@@ -49,7 +50,7 @@ mosquitto-12-2_task:
 
 node-red-12-2_task:
   <<: *INSTALL_PLUGIN
-  only_if: "changesInclude('node-red.json', '.cirrus/install_script.sh')"
+  #only_if: "changesInclude('node-red.json', '.cirrus/install_script.sh')"
   matrix:
     - freebsd_instance:
         image_family: freebsd-12-2
@@ -58,7 +59,7 @@ node-red-12-2_task:
 
 tasmoadmin-12-2_task:
   <<: *INSTALL_PLUGIN
-  only_if: "changesInclude('tasmoadmin.json', '.cirrus/install_script.sh')"
+  #only_if: "changesInclude('tasmoadmin.json', '.cirrus/install_script.sh')"
   matrix:
     - freebsd_instance:
         image_family: freebsd-12-2
@@ -67,7 +68,7 @@ tasmoadmin-12-2_task:
 
 zwavejs2mqtt-12-2_task:
   <<: *INSTALL_PLUGIN
-  only_if: "changesInclude('zwavejs2mqtt.json', '.cirrus/install_script.sh')"
+  #only_if: "changesInclude('zwavejs2mqtt.json', '.cirrus/install_script.sh')"
   matrix:
     - freebsd_instance:
         image_family: freebsd-12-2
